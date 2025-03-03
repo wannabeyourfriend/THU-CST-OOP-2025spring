@@ -63,12 +63,13 @@ void operate_editor(string inputfilepath, string outputfilepath) // 编辑器操
     TextEditor t;
     int cmd_num = 0;
     fin >> cmd_num;
-    while (cmd_num--)
+    string empty;
+    getline(fin, empty);
+    for (int i = 0; i < cmd_num; i++)
     {
         string cmd;
         getline(fin, cmd);
         t.apply(cmd);
-        fout << cmd << endl;
     }
     fin.close();
     fout.close();
