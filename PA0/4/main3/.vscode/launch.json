@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/project/oop/OJ0/PA2",
-      "program": "e:/project/oop/OJ0/PA2/build/Debug/outDebug",
+      "cwd": "e:/project/OOP/PA0/4/main3",
+      "program": "e:/project/OOP/PA0/4/main3/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

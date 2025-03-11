@@ -5,7 +5,7 @@ class AbstractNode {
 public:
     virtual float get_val() = 0;
     virtual void backward(float _grad) = 0;
-
+    virtual void clear_grad() = 0;  
     AbstractNode();
     AbstractNode(const AbstractNode &n);
     AbstractNode(AbstractNode &&n);
