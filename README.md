@@ -64,14 +64,6 @@ https://www.geeksforgeeks.org/object-oriented-programming-in-cpp/?ref=gcse_outin
 
 TextHTMLCSSJavascriptCC++C#JavaPythonSqlSwiftJSON
 
-漫游github发现的仓库（杜若和同学，oj北京，清华附中毕业，就读软件学院）
-
-包括的课程有：计算机系统概论（三个lab，代码两在2k行左右）+数据结构（lab+pa共15个，代码量在4k左右）+面向对象程序设计（6lab,一次4个PA，6*4=24个PA，代码量在3k左右）
-
-```
-https://github.com/tfia/course-assignments-index
-```
-
 TextHTMLCSSJavascriptCC++C#JavaPythonSqlSwiftJSON
 
 ### Lecture2
