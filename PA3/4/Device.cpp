@@ -1,11 +1,7 @@
 #include "Device.h"
 
-// BaseLock 实现
-BaseLock::BaseLock() {}
-
-bool BaseLock::isUnlocked(const std::vector<Device *> &accessed) {
-    // BaseLock没有依赖，始终可以解锁
-    return true;
+bool BaseLock::isUnlocked(const std::vector<Device*>& accessed) {
+    return true; 
 }
 
 void BaseLock::execute() {
@@ -17,16 +13,12 @@ std::string BaseLock::getName() const {
 }
 
 Department BaseLock::getAllowedDepartment() const {
-    return MACRODATA_REFINEMENT; // 只有MDR部门可以访问
+    return MACRODATA_REFINEMENT;
 }
 
-// SecurityPanel 实现
-SecurityPanel::SecurityPanel() {}
-
-bool SecurityPanel::isUnlocked(const std::vector<Device *> &accessed) {
-    // 检查是否已经访问过BaseLock
+bool SecurityPanel::isUnlocked(const std::vector<Device*>& accessed) {
     for (auto device : accessed) {
-        if (dynamic_cast<BaseLock *>(device)) {
+        if (dynamic_cast<BaseLock*>(device)) {
             return true;
         }
     }
@@ -42,27 +34,18 @@ std::string SecurityPanel::getName() const {
 }
 
 Department SecurityPanel::getAllowedDepartment() const {
-    return MACRODATA_REFINEMENT; // 只有MDR部门可以访问
+    return MACRODATA_REFINEMENT;
 }
 
-// DataTerminal 实现
 DataTerminal::DataTerminal(int capacity) : capacity(capacity) {}
 
-bool DataTerminal::isUnlocked(const std::vector<Device *> &accessed) {
-    bool hasBaseLock = false;
-    bool hasSecurityPanel = false;
-    
-    // 检查是否已经访问过BaseLock和SecurityPanel
+bool DataTerminal::isUnlocked(const std::vector<Device*>& accessed) {
     for (auto device : accessed) {
-        if (dynamic_cast<BaseLock *>(device)) {
-            hasBaseLock = true;
-        }
-        if (dynamic_cast<SecurityPanel *>(device)) {
-            hasSecurityPanel = true;
+        if (dynamic_cast<SecurityPanel*>(device)) {
+            return true;
         }
     }
-    
-    return hasBaseLock && hasSecurityPanel;
+    return false;
 }
 
 void DataTerminal::execute() {
@@ -74,15 +57,11 @@ std::string DataTerminal::getName() const {
 }
 
 Department DataTerminal::getAllowedDepartment() const {
-    return MACRODATA_REFINEMENT; // 只有MDR部门可以访问
+    return MACRODATA_REFINEMENT;
 }
 
-// OpticalTool 实现
-OpticalTool::OpticalTool() {}
-
-bool OpticalTool::isUnlocked(const std::vector<Device *> &accessed) {
-    // OpticalTool没有依赖，始终可以解锁
-    return true;
+bool OpticalTool::isUnlocked(const std::vector<Device*>& accessed) {
+    return true; 
 }
 
 void OpticalTool::execute() {
@@ -94,5 +73,5 @@ std::string OpticalTool::getName() const {
 }
 
 Department OpticalTool::getAllowedDepartment() const {
-    return OPTICS_AND_DESIGN; // 只有O&D部门可以访问
+    return OPTICS_AND_DESIGN;
 }
