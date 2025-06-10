@@ -1,0 +1,3 @@
+Build robot Bob run: 4
+Build robot Alice run: 17
+Build robot Alice run: 22
