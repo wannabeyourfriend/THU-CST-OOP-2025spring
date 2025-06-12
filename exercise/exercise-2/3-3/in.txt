@@ -1,0 +1,4 @@
+3
+0 Dragon Fist 1 Fighting_Dragon Fire_Sword
+1 Fighting_Dragon Fire_Sword 2 Lucky_Dragon Ice_Heart
+2 Lucky_Dragon Ice_Heart 0 Dragon Fist
